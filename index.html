@@ -1,239 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Benedict Wanjala | Educator & Curriculum Specialist</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title> Benedict Wanjala| Teaching Portfolio</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  emailjs.init("GAkR7RB5bgZh_dYjm");
+</script>
 
 <style>
-
-/* RESET */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-    font-family:'Segoe UI',sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
 }
 
-/* BODY */
-body{
-    background:#0f172a;
-    color:#e2e8f0;
-    line-height:1.7;
+body {
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
-/* NAVBAR */
-.navbar{
-    position:fixed;
-    top:0;
-    width:100%;
-    padding:18px 8%;
-    background:rgba(15,23,42,.9);
-    backdrop-filter:blur(10px);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:1000;
+/* HEADER */
+header {
+  padding: 70px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
 }
 
-.logo{
-    font-size:24px;
-    font-weight:700;
-    color:#38bdf8;
+header h1 {
+  font-size: 45px;
 }
 
-.nav-links{
-    display:flex;
-    list-style:none;
+header p {
+  color: #94a3b8;
+  margin-top: 10px;
 }
 
-.nav-links li{
-    margin-left:25px;
+/* NAV */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
 }
 
-.nav-links a{
-    text-decoration:none;
-    color:white;
-    transition:.3s;
+.logo {
+  color: #38bdf8;
+  font-weight: bold;
 }
 
-.nav-links a:hover{
-    color:#38bdf8;
+.nav-links a {
+  color: #e2e8f0;
+  margin-left: 20px;
+  text-decoration: none;
 }
 
-/* HERO */
-.hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:100px 20px;
-}
-
-.profile-pic{
-    width:220px;
-    height:220px;
-    border-radius:50%;
-    object-fit:cover;
-    border:5px solid #38bdf8;
-    box-shadow:0 0 30px rgba(56,189,248,.4);
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-size:55px;
-    margin-bottom:10px;
-}
-
-.hero p{
-    color:#94a3b8;
-    font-size:22px;
-    margin-bottom:25px;
-}
-
-.btn{
-    display:inline-block;
-    padding:14px 28px;
-    background:#38bdf8;
-    color:#0f172a;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
+.nav-links a:hover {
+  color: #38bdf8;
 }
 
 /* SECTIONS */
-section{
-    max-width:1100px;
-    margin:auto;
-    padding:80px 20px;
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-section h2{
-    text-align:center;
-    color:#38bdf8;
-    margin-bottom:40px;
-    font-size:36px;
+h2 {
+  color: #38bdf8;
+  margin-bottom: 20px;
 }
 
 /* CARD */
-.card{
-    background:#1e293b;
-    padding:25px;
-    border-radius:15px;
-    margin-bottom:20px;
-    transition:.4s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 10px 30px rgba(56,189,248,.2);
-}
-
-/* SERVICES */
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+.card {
+  background: #1e293b;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
 }
 
 /* SKILLS */
-.skill{
-    margin-bottom:25px;
+.skills-grid {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.skill h3{
-    margin-bottom:10px;
+
+.skill-ring {
+  text-align: center;
 }
 
-.bar{
-    width:100%;
-    height:12px;
-    background:#334155;
-    border-radius:20px;
-    overflow:hidden;
+.circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
 }
 
-.bar span{
-    display:block;
-    height:100%;
-    background:#38bdf8;
-    border-radius:20px;
-    width:0;
-    transition:2s;
+.circle svg {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+
+circle {
+  fill: none;
+  stroke-width: 8;
+  cx: 60;
+  cy: 60;
+  r: 48;
+}
+
+.bg {
+  stroke: #1e293b;
+}
+
+.progress {
+  stroke: #38bdf8;
+  stroke-linecap: round;
+  stroke-dasharray: 301;
+  stroke-dashoffset: 301;
+  transition: 1.6s ease;
+}
+
+.percent {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #38bdf8;
+  font-size: 13px;
+}
+
+.circle img {
+  width: 40px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* BUTTON */
+button {
+  padding: 10px 15px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 /* CONTACT */
-form{
-    display:flex;
-    flex-direction:column;
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: none;
 }
 
-input,textarea{
-    padding:15px;
-    margin-bottom:15px;
-    border:none;
-    border-radius:8px;
-    background:#334155;
-    color:white;
+#status-box {
+  display: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  text-align: center;
 }
 
-button{
-    padding:15px;
-    background:#38bdf8;
-    color:#0f172a;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:bold;
-}
+.success { background: #16a34a; }
+.error { background: #ef4444; }
+.loading { background: #38bdf8; color: #0f172a; }
 
 /* FOOTER */
-footer{
-    text-align:center;
-    background:#020617;
-    padding:40px 20px;
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111827;
+  margin-top: 40px;
 }
 
-.socials{
-    margin:20px 0;
+.footer-icons a {
+  color: #94a3b8;
+  margin: 0 10px;
+  font-size: 18px;
 }
 
-.socials a{
-    color:white;
-    font-size:22px;
-    margin:0 10px;
+.footer-icons a:hover {
+  color: #38bdf8;
 }
 
-.socials a:hover{
-    color:#38bdf8;
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  /* animation */
+  animation: floatProfile 4s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+  transition: transform 0.3s ease;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-
-.hero h1{
-    font-size:38px;
+/* hover effect */
+.profile-pic:hover {
+  transform: scale(1.05);
 }
 
-.nav-links{
-    display:none;
+/* floating animation */
+@keyframes floatProfile {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-.profile-pic{
-    width:180px;
-    height:180px;
+  /* ================= PROFILE WRAPPER ================= */
+.profile-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 8px auto;
 }
 
+/* rotating glow ring */
+.glow-ring {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+
+  border: 3px solid transparent;
+  border-top: 3px solid #38bdf8;
+  border-right: 3px solid rgba(56,189,248,0.4);
+
+  animation: rotateRing 3s linear infinite;
+  filter: drop-shadow(0 0 10px #38bdf8);
+}
+
+/* profile image stays on top */
+.profile-pic {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+/* rotation animation */
+@keyframes rotateRing {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* smooth movement */
+.profile-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  transition: all 0.6s ease;
+}
+
+/* when floating to top-right */
+.profile-wrapper.scrolled {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  width: 70px;
+  height: 70px;
+  z-index: 2000;
+}
+
+/* image smooth resize */
+.profile-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.6s ease;
+  box-shadow: 0 0 15px rgba(56,189,248,0.4);
+}
+
+/* NAME ANIMATION */
+#heroName {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* hidden state when scrolling */
+#heroName.hide {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
 }
 
 </style>
@@ -241,225 +333,231 @@ footer{
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav class="navbar">
-<div class="logo">Benedict Wanjala</div>
-
-<ul class="nav-links">
-<li><a href="#about">About</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+  <div class="logo">Wanjala</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#work">Teaching Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
-<!-- HERO -->
-<header class="hero">
-
-<img src="profilepic.jpeg" alt="Profile"
-class="profile-pic">
-
-<h1>Benedict Wanjala</h1>
-
-<p><span id="typed"></span></p>
-
-<a href="#" class="btn">Download CV</a>
-
+<!-- HEADER -->
+<header>
+   <div class="profile-wrapper" id="profileWrapper">
+  <img src="profilepic.jpeg" class="profile-pic" id="profilePic"/>
+</div>
+  <h1 id="heroName">Benedict Wanjala</h1>
+  <p><span id="typed"></span></p>
 </header>
 
 <!-- ABOUT -->
 <section id="about">
-
-<h2>Meet Benedict Wanjala</h2>
-
-<div class="card">
-
-<p>
-I am Benedict Wanjala, an experienced educator,
-curriculum specialist, mentor, and educational consultant
-with over eight years of experience in teaching and learner development.
-</p>
-
-<br>
-
-<p>
-I hold a Bachelor of Education degree from Kenyatta University
-and I am currently pursuing a Master's Degree in Curriculum Studies.
-</p>
-
-<br>
-
-<p>
-My professional journey has equipped me with extensive knowledge
-of Competency-Based Education (CBE), curriculum implementation,
-learner-centered pedagogy, assessment strategies, and educational leadership.
-</p>
-
-</div>
-
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      I am Benedict Wanjala, an experienced educator, curriculam specialist, mentor and educational consulant
+      with over eight years of experience in teaching and learner development.
+    </p>
+  </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
+<!-- WORK -->
+<section id="work">
+  <h2>Teaching Work</h2>
 
-<h2>Services Offered</h2>
+  <div class="card">
+    <h3>Lesson Planning</h3>
+    <p>Well-structured lessons designed for effective learning.</p>
+  </div>
 
-<div class="service-grid">
+  <div class="card">
+    <h3>Classroom Management</h3>
+    <p>Maintaining discipline and student engagement in class.</p>
+  </div>
 
-<div class="card">Academic Coaching & Tutoring</div>
-
-<div class="card">Curriculum Development & Consultancy</div>
-
-<div class="card">Teacher Training & Professional Development</div>
-
-<div class="card">Educational Content Writing</div>
-
-<div class="card">Learner Mentorship & Career Guidance</div>
-
-<div class="card">Children's Storybook Development</div>
-
-</div>
-
+  <div class="card">
+    <h3>Student Mentorship</h3>
+    <p>Guiding students academically and personally.</p>
+  </div>
 </section>
+<!--animation-->
 
 <!-- SKILLS -->
+
 <section id="skills">
+<h2>Teaching Skills</h2>
 
-<h2>Professional Skills</h2>
+<div class="skills-grid">
 
-<div class="skill">
-<h3>Communication 95%</h3>
-<div class="bar"><span style="width:95%"></span></div>
+<div class="skill-ring" data-percent="95">
+<div class="circle">
+<span class="percent">95%</span>
+<svg>
+<circle class="bg"></circle>
+<circle class="progress"></circle>
+</svg>
+</div>
+<p>Communication</p>
 </div>
 
-<div class="skill">
-<h3>Teaching 90%</h3>
-<div class="bar"><span style="width:90%"></span></div>
+<div class="skill-ring" data-percent="90">
+<div class="circle">
+<span class="percent">85%</span>
+<svg>
+<circle class="bg"></circle>
+<circle class="progress"></circle>
+</svg>
+</div>
+<p>Teaching</p>
 </div>
 
-<div class="skill">
-<h3>Mentorship 88%</h3>
-<div class="bar"><span style="width:88%"></span></div>
+<div class="skill-ring" data-percent="85">
+<div class="circle">
+<span class="percent">90%</span>
+<svg>
+<circle class="bg"></circle>
+<circle class="progress"></circle>
+</svg>
+</div>
+<p>Mentorship</p>
 </div>
 
-<div class="skill">
-<h3>Leadership 92%</h3>
-<div class="bar"><span style="width:92%"></span></div>
 </div>
-
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-
-<h2>Contact Me</h2>
+<h2>Contact Mr. Wanjala</h2>
 
 <div class="card">
-
-<form>
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Your Email">
-<textarea rows="5"
-placeholder="Your Message"></textarea>
-
-<button>Send Message</button>
+<form id="contact-form">
+<input type="text" name="from_name" placeholder="Your Name" required>
+<input type="email" name="from_email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Message" required></textarea>
+<button type="submit">Send</button>
 </form>
 
-</div>
+<div id="status-box"></div>
 
+<p style="margin-top:10px;">Email:benedictwanjala100@gmail.com
+</p>
+</div>
 </section>
 
+<!-- FOOTER -->
 <footer>
+<p>© 2026 Benedict Wanjala. All rights reserved.</p>
 
-<h3>Benedict Wanjala</h3>
-
-<p>Educator • Curriculum Specialist • Mentor</p>
-
-<div class="socials">
-<a href="#"><i class="fab fa-facebook"></i></a>
-<a href="#"><i class="fab fa-whatsapp"></i></a>
-<a href="#"><i class="fab fa-linkedin"></i></a>
+<div class="footer-icons">
+<a href="#"><i class="fa-brands fa-facebook"></i></a>
+<a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+<a href="#"><i class="fa-brands fa-github"></i></a>
 </div>
-
-<p>© 2026 All Rights Reserved</p>
-
 </footer>
 
+<!-- TYPE EFFECT -->
 <script>
-
-/* TYPING EFFECT */
-
-const words=[
-"Educator",
-"Curriculum Specialist",
-"Mentor",
-"Educational Consultant"
-];
-
-let wordIndex=0;
-let charIndex=0;
-let deleting=false;
+const words = ["Headteacher","Social Teacher", "Mentor", "Educator"];
+let i=0,j=0,isDeleting=false;
 
 function type(){
+  const el=document.getElementById("typed");
+  const word=words[i];
 
-const typed=document.getElementById("typed");
+  el.textContent = word.substring(0,j);
 
-const currentWord=words[wordIndex];
+  if(!isDeleting){
+    j++;
+    if(j>word.length){isDeleting=true;setTimeout(type,1000);return;}
+  } else {
+    j--;
+    if(j===0){isDeleting=false;i=(i+1)%words.length;}
+  }
 
-typed.textContent=currentWord.substring(0,charIndex);
-
-if(!deleting){
-
-charIndex++;
-
-if(charIndex>currentWord.length){
-
-deleting=true;
-
-setTimeout(type,1500);
-
-return;
+  setTimeout(type,isDeleting?60:120);
 }
-
-}else{
-
-charIndex--;
-
-if(charIndex===0){
-
-deleting=false;
-
-wordIndex=(wordIndex+1)%words.length;
-}
-}
-
-setTimeout(type,deleting?60:120);
-}
-
 type();
+</script>
 
-/* SKILL ANIMATION */
+<!-- SKILL ANIMATION -->
+<script>
+const skills=document.querySelectorAll(".skill-ring");
 
-const observer=new IntersectionObserver(entries=>{
-
+const obs=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-
 if(entry.isIntersecting){
+let p=entry.target.dataset.percent;
+let circle=entry.target.querySelector(".progress");
+let r=48;
+let c=2*Math.PI*r;
 
-entry.target.querySelector("span").style.width=
-entry.target.querySelector("span").style.width;
+circle.style.strokeDasharray=c;
+circle.style.strokeDashoffset=c-(p/100)*c;
 
+obs.unobserve(entry.target);
 }
+});
+},{threshold:0.5});
+
+skills.forEach(s=>obs.observe(s));
+</script>
+
+<!-- EMAIL -->
+<script>
+const form=document.getElementById("contact-form");
+const box=document.getElementById("status-box");
+
+form.addEventListener("submit",e=>{
+e.preventDefault();
+
+box.style.display="block";
+box.className="loading";
+box.textContent="Sending...";
+
+emailjs.sendForm("service_5mr2kq9","template_x977fh1",form)
+.then(()=>{
+box.className="success";
+box.textContent="Message sent!";
+form.reset();
+})
+.catch(()=>{
+box.className="error";
+box.textContent="Failed to send";
+});
+});
+</script>
+
+<script>
+const profile = document.getElementById("profileWrapper");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 120) {
+    profile.classList.add("scrolled");
+  } else {
+    profile.classList.remove("scrolled");
+  }
+});
+</script>
+
+<script>
+const profile = document.getElementById("profileWrapper");
+const name = document.getElementById("heroName");
+
+window.addEventListener("scroll", () => {
+
+  if (window.scrollY > 120) {
+    profile.classList.add("scrolled");
+    name.classList.add("hide");   // 👈 hide name
+  } else {
+    profile.classList.remove("scrolled");
+    name.classList.remove("hide"); // 👈 show name
+  }
 
 });
-
-});
-
-document.querySelectorAll(".skill")
-.forEach(skill=>observer.observe(skill));
-
 </script>
 
 </body>
 </html>
-```
