@@ -334,6 +334,38 @@ body {
 
 .work-cta { margin-top: 40px; display: flex; gap: 14px; flex-wrap: wrap; }
 
+/* ── GALLERY ── */
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+@media(max-width:900px){ .gallery-grid{ grid-template-columns: repeat(2,1fr); } }
+@media(max-width:560px){ .gallery-grid{ grid-template-columns: 1fr; } }
+
+.gallery-item {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  aspect-ratio: 4/3;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.gallery-item:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+.gallery-item img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img { transform: scale(1.06); }
+
+.gallery-caption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(11,17,32,0.92), transparent);
+  font-size: 13.5px; font-weight: 500; color: var(--text);
+  opacity: 0; transform: translateY(8px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+.gallery-item:hover .gallery-caption { opacity: 1; transform: translateY(0); }
+  
 /* ── SKILLS ── */
 .skills-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
@@ -520,6 +552,7 @@ footer {
     <a href="#about">About</a>
     <a href="#work">Teaching Work</a>
     <a href="#skills">Skills</a>
+    <a href="#gallery">Gallery</a>
     <a href="#testimonials">Reviews</a>
     <a href="#contact">Contact</a>
     <a href="#contact" class="btn nav-cta"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
@@ -686,6 +719,21 @@ footer {
   <div class="work-cta">
     <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Book a Consultation</a>
     <a href="#skills" class="btn btn-secondary"><i class="fa-solid fa-chart-line"></i> See My Skills</a>
+  </div>
+</section>
+
+  <!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="section-label">Moments Captured</div>
+  <h2 class="section-title">Classroom &<br>Campus Gallery</h2>
+  <p class="section-subtitle">A look at lessons, mentorship sessions, and school events I've been part of.</p>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="images/gallery1.jpg" alt="Classroom session"><div class="gallery-caption">Interactive classroom session</div></div>
+    <div class="gallery-item"><img src="images/gallery2.jpg" alt="Student mentorship"><div class="gallery-caption">One-on-one mentorship</div></div>
+    <div class="gallery-item"><img src="images/gallery3.jpg" alt="School event"><div class="gallery-caption">School event</div></div>
+    <div class="gallery-item"><img src="images/gallery4.jpg" alt="Curriculum workshop"><div class="gallery-caption">Curriculum workshop</div></div>
+    <div class="gallery-item"><img src="images/gallery5.jpg" alt="Graduation ceremony"><div class="gallery-caption">Graduation ceremony</div></div>
+    <div class="gallery-item"><img src="images/gallery6.jpg" alt="Staff collaboration"><div class="gallery-caption">Staff collaboration</div></div>
   </div>
 </section>
 
